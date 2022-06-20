@@ -3,8 +3,10 @@ import {
     Text,
     View,
     Image,
-    TouchableOpacity, Pressable, Alert, FlatList, Modal
+    TouchableOpacity, Pressable, Alert, FlatList, Modal,
   } from 'react-native';
+
+
 import React,{ useState, useEffect } from 'react'
 import { useIsFocused} from '@react-navigation/native';
 import api from '../FirebaseData/DataExtract';
@@ -149,7 +151,7 @@ const ProfileScreen = ({navigation}) => {
 
           
           <View style={styles.body}>
-                <Text style={{ color: 'black',textAlign: 'center',padding: 10, }}>Rewards Points</Text>
+                <Text style={{ color: 'black',textAlign: 'center',padding: 10, color:'blue', fontSize:20, }}>Rewards Points</Text>
             <TouchableOpacity>
               <Progress.Bar style={{alignSelf:'center'}} progress={userProgress} width={100} animated={true} color={'#696969'} />
             </TouchableOpacity>
@@ -224,10 +226,11 @@ const styles = StyleSheet.create({
     },
     name:{
       position: 'absolute',
-      marginTop: '6%',
+      marginTop: '10%',
       fontSize:28,
       color: "#696969",
       fontWeight: "600"
+
     },
     mail:{
       fontSize:16,
@@ -240,7 +243,7 @@ const styles = StyleSheet.create({
       fontSize:20,
       color: "#696969",
       position: 'absolute',
-      marginTop:"34%",
+      marginTop:"30%",
       textAlign: 'center'
     },
 

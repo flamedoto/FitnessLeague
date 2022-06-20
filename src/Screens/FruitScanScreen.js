@@ -55,6 +55,13 @@ const FruitScanScreen = ({ navigation }) => {
 
         </View>
       }
+
+      <TouchableOpacity
+        onPress={() => setModalVisible(true)}
+        style={styles.rewardButtonContainer}
+        >
+          <Text style={styles.allRDataButton}>Show Scanned Fruits</Text>
+        </TouchableOpacity>
     </View>
   )
 }
@@ -62,6 +69,25 @@ const FruitScanScreen = ({ navigation }) => {
 export default FruitScanScreen
 
 const styles = StyleSheet.create({
+
+  allRDataButton: {
+    fontSize: 20,
+    marginBottom: 5,
+    color:'white'
+  },
+
+  rewardButtonContainer: {
+    
+    marginTop:'10%',
+    alignSelf:'center',
+    elevation: 8,
+    backgroundColor: "#009688",
+    borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    marginBottom:'5%'
+  },
+
   mainHeading: {
     fontSize: 24,
     fontWeight: '500',

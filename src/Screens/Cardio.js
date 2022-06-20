@@ -332,7 +332,7 @@ import { View,
           />
         </View>
   
-        <View style={{marginTop: -30, marginHorizontal: 30}}>
+        <View style={{marginTop: 300, marginHorizontal: 30}}>
          
      
           <View
@@ -350,11 +350,11 @@ import { View,
               source={
                 require('../Assets/images/nobg_cardio.png')
               }
-              style={{width: 80, height: 60, resizeMode: 'center'}}
+              style={{width: 80, height: 60, resizeMode: 'center',}}
             />
             <View>
               <Text style={{fontSize:15, fontWeight:'800', color: 'black'}}>Cardio Exercise</Text>
-              <Text  style={{ color: 'black' }}>Start your Exercise</Text>
+              <Text  style={{ color: 'black',  }}>Start your Exercise</Text>
             </View>
           </View>
         </View>

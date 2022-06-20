@@ -141,7 +141,7 @@ const TodayScreen = () => {
     
     
     const config = {
-      default_threshold: 100.0,
+      default_threshold: 70,
       default_delay: 150000000,
       cheatInterval: 3000,
       onStepCountChange: (stepCount) => { 
@@ -150,9 +150,9 @@ const TodayScreen = () => {
         api.UpdateCalories({ Steps: step })
        
         api.UpdateSteps({ Steps: step})
-        setSteps(step) 
+        setSteps(step)
       },
-      onCheat: () => { console.log("User is Cheating") }
+      onCheat: () => { alert("You are cheating, your steps are not being counted.") }
     }
     startCounter(config);
     return () => { 
@@ -303,12 +303,15 @@ const TodayScreen = () => {
    </View>
     
       <View style={styles.screen}>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <Text style={styles.allRDataButton}>Show all rewards</Text>
+        <TouchableOpacity
+        onPress={() => setModalVisible(true)}
+        style={styles.rewardButtonContainer}
+        >
+          <Text style={styles.allRDataButton}>Show Rewards</Text>
         </TouchableOpacity>
         <Text style={styles.step}>Steps Walked: {steps}</Text>
         <Text style={styles.pointsText}>Task points: {rewardLocation.rewards}</Text>
-        <Text style={styles.pointsText}>{ rewardLocation == 'None' ? <Text>No new task available</Text> : <Text>Task Avaiable</Text> }  </Text>
+        <Text style={styles.pointsText}>{ rewardLocation == 'None' ? <Text style={{color:'blue'}}>No Task Available</Text> : <Text style={{color:'blue'}}>Task Avaiable</Text> }  </Text>
       </View>
     </View>
   );
@@ -326,15 +329,25 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   pointsText: {
-
     fontSize: 20,
     color: 'black',
     marginTop: 10
   },
+
   allRDataButton: {
     
     fontSize: 20,
-    marginBottom: 10
+    marginBottom: 5,
+    color:'white'
+  },
+
+  rewardButtonContainer: {
+    elevation: 8,
+    backgroundColor: "#009688",
+    borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    marginBottom:'5%'
   },
   container: {
     ...StyleSheet.absoluteFillObject,

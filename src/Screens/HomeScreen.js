@@ -304,20 +304,21 @@ const HomeScreen = ({navigation}) => {
           <View style={{width: 60, height:60, backgroundColor: COLORS.accent+'40',
           marginRight:0,borderRadius:30,justifyContent:'center',alignItems:'center',
         }}> 
-            <Text style={{fontWeight:'700', textDecorationLine:'underline'}} >BMI</Text>
+            <Text style={{fontWeight:'700', textDecorationLine:'underline', color:'blue'}}>BMI</Text>
               
             
 
          </View>
         </View>
         </TouchableOpacity>
-                  <Text style={{fontSize:30, lineHeight:45}}>Good Morning {userData.firstName}!</Text>
+                  <Text style={{fontSize:30, lineHeight:45}}>GOOD MORNING</Text>
+                  <Text style={{fontSize:30, lineHeight:45, color:'blue',textTransform: 'uppercase'}}>{userData.firstName}</Text>
 
         {/* <Text style={{ color: 'black',marginTop: 10,fontWeight: 'bold' }}>Calroies History</Text> */}
 
         <View style={styles.caloriesBar}>
-          <Text style={styles.caloriesText}>Calroies {BMIData.weightType} {parseInt(caloBurnorConsume)}/{caloriesData.caloriesTarget}</Text>
-          <Progress.Bar progress={caloriesPercentage} width={300}  style={{ width: undefined }}/>
+          <Text style={styles.caloriesText}>Weight Type:  {BMIData.weightType} {parseInt(caloBurnorConsume)}/{caloriesData.caloriesTarget}</Text>
+          <Progress.Bar progress={caloriesPercentage} width={320}  style={{ width: 300,alignSelf:'center', }}/>
         </View>
       </View>
 
@@ -345,7 +346,7 @@ const HomeScreen = ({navigation}) => {
           }}>
           <Image style={{width: '100%',resizeMode: 'cover', flex: 1, }}
           source={require('../Assets/images/food_recommend.png')} />
-          <Text style={{marginTop: 20, textAlign: 'center', fontSize: 16, fontWeight:'500', color: 'black'}}> Diet Plan </Text>
+          <Text style={{marginTop: 20, textAlign: 'center', fontSize: 16, fontWeight:'500', color: 'black'}}> Food Logger </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -422,7 +423,7 @@ const HomeScreen = ({navigation}) => {
         }}>
         <Image style={{width: '100%',resizeMode: 'cover', flex: 1, }}
         source={require('../Assets/images/food_recommend.png')} />
-        <Text style={{marginTop: 20, textAlign: 'center', fontSize: 16, fontWeight:'500', color: 'black'}}> Diet Plan </Text>
+        <Text style={{marginTop: 20, textAlign: 'center', fontSize: 16, fontWeight:'500', color: 'black'}}> Food Logger </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -509,7 +510,8 @@ const styles = StyleSheet.create({
   },
   caloriesText:{
     marginBottom: 8,
-    color: 'black'
-
+    color: 'black',
+    alignSelf:'center',
+    textTransform: 'uppercase',
   }
 })

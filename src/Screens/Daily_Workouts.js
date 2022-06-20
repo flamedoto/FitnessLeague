@@ -333,7 +333,7 @@ import { View,
           />
         </View>
   
-        <View style={{marginTop: -30, marginHorizontal: 30}}>
+        <View style={{marginTop: 300, marginHorizontal: 30}}>
          
      
           <View

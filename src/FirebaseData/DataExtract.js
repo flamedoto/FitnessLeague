@@ -253,6 +253,30 @@ const getAllUsersSteps = async ()=> {
     })
 }
 
+
+const getUserFruitTask = async () =>{
+
+    return new Promise(async(resolve, reject) => {
+        var foodData = firebase.firestore()
+        .collection('foodScanTask')
+
+        foodData = foodData.where('userId', '==', firebase.auth().currentUser.uid)
+
+
+        
+        foodData.get()
+        .then(collectionSnapshot => {
+           // console.log('Total users: ', collectionSnapshot.size);
+           //console.log('user: ', collectionSnapshot.docs[0]._data);
+           if(collectionSnapshot.size == 0 ){
+                reject("No Data")
+           }else{
+                resolve(collectionSnapshot.docs)
+            }
+        });
+    })
+}
+
 const getUserSteps = async () =>{
 
     return new Promise(async(resolve, reject) => {
@@ -675,5 +699,6 @@ export default {
     updateOneSignalId,
     getUserFoodTask,
     fruitRewardComeplete,
-    getUserCalories
+    getUserCalories,
+    getUserFruitTask
 };

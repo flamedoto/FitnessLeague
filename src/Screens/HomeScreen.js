@@ -14,14 +14,15 @@ import * as Progress from 'react-native-progress';
 
 
 RNLocation.configure({
-  distanceFilter: 50, // Meters
+  distanceFilter: 5, // Meters
   desiredAccuracy: {
-    android: "balancedPowerAccuracy"
+    android: "highAccuracy"
   },
+  androidProvider: "auto",
   // Android only
-  interval: 30000, // Milliseconds
-  fastestInterval: 30000, // Milliseconds
-  maxWaitTime: 30000, // Milliseconds
+  interval: 1000, // Milliseconds
+  fastestInterval: 1000, // Milliseconds
+  maxWaitTime: 1000, // Milliseconds
 })
 
 
@@ -324,7 +325,7 @@ const HomeScreen = ({navigation}) => {
 
 
 
-      {userBMIData.weightType == 'lose' ? 
+      {userBMIData.weightType != 'lose' ? 
       <View>
         <View style={{flexDirection:'row'}}>
 

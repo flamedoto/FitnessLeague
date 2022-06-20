@@ -97,7 +97,7 @@ function MyTabs() {
         <Stack.Screen options={{ headerShown: false}} name="KegleScreen" component={KegleScreen} />
         <Stack.Screen options={{ headerShown: false}} name="Cardio" component={Cardio} />
         <Stack.Screen options={{ headerShown: false}} name="Daily_Workout" component={Daily_Workout} />
-        <Stack.Screen options={{ headerShown: false , unmountOnBlur: true}} name="VideoPlayerScreen" component={VideoPlayerScreen} />
+        <Stack.Screen options={{ headerShown: false , unmountOnBlur: false}} name="VideoPlayerScreen" component={VideoPlayerScreen} />
         
     </Stack.Navigator>
 

@@ -13,7 +13,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import firestore from '@react-native-firebase/firestore';
 import PerosnalData from '../Data/PersonalData';
 import LottieView from 'lottie-react-native';
-
+import { getDistance } from 'geolib';
 import AntIcon from 'react-native-vector-icons/AntDesign'
 
 const TodayScreen = () => {
@@ -59,15 +59,23 @@ const TodayScreen = () => {
 
       let locationSubscription = RNLocation.subscribeToLocationUpdates(locations => {
         //        console.log(locations)
+       // alert(locations[0].longitude)
                 setUserLocation(locations[0])
         
                 if(rewardLocation != 'None'){
                   if(rewardLocation != '' && rewardCompleted == false){
+                    let a = getDistance(
+                      { latitude: rewardLocation.Location._latitude, longitude: rewardLocation.Location._longitude },
+                      { latitude: locations[0].latitude, longitude: locations[0].longitude }
+                  );
+
+                  alert(a)
                   // let rL = new firestore.GeoPoint(rewardLocation.Location._latitude, rewardLocation.Location._longitude)
                     let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
                     let onLocation = rewardLocation.Location.isEqual(uL);
                   // console.log(onLocation)
                     if(onLocation == true){
+                      alert('true')
                       setRewardCompleted(true)
                       api.RewardCompleted({ Points: PerosnalData.points + rewardLocation.rewards }).then((r)=>{
                         PerosnalData.points += rewardLocation.rewards
@@ -141,7 +149,7 @@ const TodayScreen = () => {
     
     
     const config = {
-      default_threshold: 70,
+      default_threshold: 49,
       default_delay: 150000000,
       cheatInterval: 3000,
       onStepCountChange: (stepCount) => { 

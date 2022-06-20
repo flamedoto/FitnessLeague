@@ -2,9 +2,11 @@ import { StyleSheet, Text, View , Image, TextInput, TouchableOpacity } from 'rea
 import React,{useState} from 'react'
 import { useNavigation} from '@react-navigation/native';
 import AntDesign  from 'react-native-vector-icons/AntDesign';
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { authentication } from '../../firebase';
+//import { signInWithEmailAndPassword } from "firebase/auth";
+import firebase from '../../firebase';
+import auth from '@react-native-firebase/auth';
 
+import LoginState from '../Data/LoginState'
 
 const LoginScreen = ({navigation}) => {
 
@@ -13,14 +15,35 @@ const LoginScreen = ({navigation}) => {
 
   const handleSignIn = () => {
 
-    signInWithEmailAndPassword(authentication, email, password)
+
+   /* let echeck = await firebase.auth().fetchSignInMethodsForEmail(email);
+    if(echeck.length == 0){
+      window.alert("Email address or Password incorrect!")
+      return
+    }
+*/
+  
+    
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((res) => {
+      console.log(res)
+      console.log('User logged-in successfully!')
+    
+      LoginState.userLoginin = true
+    })
+    .catch(error => alert(error))
+
+
+   /* signInWithEmailAndPassword(authentication, email, password)
     .then((re)=>{
         navigation.navigate('HomeScreen')
       
     })
     .catch((re)=>{
       console.log(re);
-    })
+    })*/
   }
 
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1014763850888",
+    "project_id": "fitneeague",
+    "storage_bucket": "fitneeague.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014763850888:android:cbf5a65dc450e774efe33d",
+        "android_client_info": {
+          "package_name": "com.fitnessleague"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014763850888-0qb2jck94e2p82ph3ot8en967d9ng0hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeB5_VzJH50VJ3VW2ADMEhLeUHIpCfjPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014763850888-0qb2jck94e2p82ph3ot8en967d9ng0hg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

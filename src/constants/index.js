@@ -1,3 +1,8 @@
 import {COLORS, SIZES} from './theme';
 
-export {COLORS, SIZES};
+
+const CaloriesPerStep = 0.03
+
+const MaximumPoints = 1000
+
+export {COLORS, SIZES, CaloriesPerStep, MaximumPoints};

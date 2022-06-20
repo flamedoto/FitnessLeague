@@ -5,15 +5,17 @@ import { View,
   Image,
   TextInput,
   StyleSheet,
+  TouchableOpacity,
   FlatList } from 'react-native'
 
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5'
 import { COLORS, SIZES } from '../constants/theme';
 import React , {useState} from 'react'
+import VideoLink from '../Data/VideoLink';
 
 
 
-const ExerciseScreen = () => {
+const ExerciseScreen = ({ navigation }) => {
 
 
   return (
@@ -40,7 +42,7 @@ const ExerciseScreen = () => {
           }}
         />
        
-        <Text style={{fontSize: 16, opacity: 0.6,}}>
+        <Text style={{fontSize: 16, opacity: 0.6}}>
         Live happier and healthier by learning the fundamentals of kegel exercises
         </Text>
         <Text style={{fontSize: 12, color:'red'}} > 10-20 MIN Course </Text>
@@ -54,6 +56,7 @@ const ExerciseScreen = () => {
             height: 50,
             borderRadius: 25,
             marginVertical: 30,
+            color: 'black'
           }}>
           <FontAwesome5Icons
             name="search"
@@ -67,7 +70,7 @@ const ExerciseScreen = () => {
 
                   {/* SESSION VIEWS 1, 2 */}
 
-        <View style={{flexDirection:'row', marginTop:'50%',}}> 
+        <View style={{flexDirection:'row', marginTop:'55%',}}> 
 
               
           <View
@@ -85,7 +88,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/1.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -101,8 +108,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 1</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 1</Text>
           </View>
 
           <View
@@ -120,7 +127,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/2.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -136,8 +147,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 2</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 2</Text>
           </View>
 
       </View>
@@ -158,7 +169,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/3.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -174,8 +189,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 3</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 3</Text>
       </View>
 
       <View
@@ -193,7 +208,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/4.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -209,8 +228,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 4</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 4</Text>
       </View>
  </View>
 
@@ -231,7 +250,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/5.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -247,8 +270,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 5</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 5</Text>
       </View>
 
       <View
@@ -266,7 +289,11 @@ const ExerciseScreen = () => {
           shadowColor: '#C7B8F5',
           elevation: 5,
         }}>
-        <View
+        <TouchableOpacity
+            onPress={()=>{
+                VideoLink.Link = require("../Assets/videos/Gain/yoga/6.mp4")
+                navigation.navigate('VideoPlayerScreen')
+            }}
           style={{
             width: 40,
             height: 40,
@@ -282,8 +309,8 @@ const ExerciseScreen = () => {
             name="play"
             style={{color:'white'}}
           />
-        </View>
-        <Text>Session 6</Text>
+        </TouchableOpacity>
+        <Text style={{ color: 'black' }}>Session 6</Text>
       </View>
       </View>
 
@@ -328,8 +355,8 @@ const ExerciseScreen = () => {
             style={{width: 80, height: 60, resizeMode: 'center'}}
           />
           <View>
-            <Text style={{fontSize:15, fontWeight:'800'}}>Yoga</Text>
-            <Text>Start your Exercise</Text>
+            <Text style={{fontSize:15, fontWeight:'800', color: 'black'}}>Yoga</Text>
+            <Text style={{ color : 'black' }}>Start your Exercise</Text>
           </View>
         </View>
       </View>

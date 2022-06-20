@@ -13,6 +13,8 @@ import * as Progress from 'react-native-progress';
 import PersonalData from '../Data/PersonalData';
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import BMIData from '../Data/BMIData';
+import firebase from '../../firebase';
+import LoginState from '../Data/LoginState';
 const ProfileScreen = ({navigation}) => {
   const [userData, setUserData] = useState(PersonalData)
   const [userBMIData, setUserBMIData] = useState(BMIData)
@@ -174,7 +176,11 @@ const ProfileScreen = ({navigation}) => {
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button}
-                onPress={()=> navigation.navigate('LoginScreen')}
+                onPress={async ()=> {
+                  //navigation.navigate('LoginScreen')
+                  LoginState.userLoginin = false
+                  await firebase.auth().signOut()
+                }}
               > 
                   <Text> Logout </Text>
               </TouchableOpacity>

@@ -53,7 +53,7 @@ const RegisterScreen = ({navigation}) => {
           Height: height,
           Weight: weight,
           Steps: 0,
-          Points: 0,
+          points: 0,
           Gender: gender,
           Location: '',
           calories: '0',
@@ -202,7 +202,7 @@ const RegisterScreen = ({navigation}) => {
 
 
        <View
-          style={{ borderWidth: 2, flexDirection: "row", alignItems:"center", marginHorizontal:55,marginTop:20,
+          style={{ borderWidth: 2, flexDirection: "row", alignItems:"center", marginHorizontal:55,marginTop:90,
                   paddingHorizontal: 10, borderRadius: 23, borderColor:"#84bef5", paddingVertical: 2,}}> 
           <AntDesign name={"lock"} size={24} color="#84bef5" />
           <TextInput style={{ paddingHorizontal:15, }} placeholder=" Height (meter)" onChangeText={text => setHeight(text)} />

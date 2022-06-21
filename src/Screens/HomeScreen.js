@@ -198,6 +198,8 @@ const HomeScreen = ({navigation}) => {
         PersonalData.lastName = userD.lastName
         PersonalData.userId = userD.userId
 
+      }).catch(e=>{
+        
       });
 
       api.BMIGet().then((userD)=>{
@@ -211,6 +213,8 @@ const HomeScreen = ({navigation}) => {
         BMIData.userId = userD.userId
         BMIData.weightType = userD.weightType
   
+      }).catch(e=>{
+
       });
 
 

@@ -37,9 +37,33 @@ const RegisterScreen = ({navigation}) => {
   const handleSignUp = () => {
 
 
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (reg.test(email) === false) {
+      alert("Email is Not Correct");
+      return;
+    }
+
+
+    if(password.length < 6){
+      alert("Password must be alphanumeric and 8 character long");
+      return;
+    }
+    if (/^([a-zA-Z0-9]+)$/.test(password) && /\d/.test(password) &&
+    /[A-Z]/i.test(password)) {
+      
+    }else{
+      console.log(1)
+      alert("Password must be alphanumeric and 8 character long");
+      return;
+    }
+
     auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(() => {
+    .then(async (U) => {
+      await firebase
+      .auth()
+      .currentUser.sendEmailVerification();
+
       console.log('User account created & signed in!');
       var user = firebase.auth().currentUser;
 
@@ -115,9 +139,10 @@ const RegisterScreen = ({navigation}) => {
           taskPoints: ''
       });*/
 
-
-      LoginState.userLoginin = true
-     // navigation.navigate('HomeScreen')
+      firebase.auth().signOut();
+     // LoginState.userLoginin = true
+     alert('Account created successfully, Please verify your email address to login')
+      navigation.navigate('LoginScreen')
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {

@@ -46,6 +46,8 @@ const TodayScreen = () => {
       api.getUserSteps().then((userD)=>{
         setSteps(userD.Steps)
         setDefaultSteps(userD.Steps)
+      }).catch(e=>{
+
       });
 
   
@@ -73,7 +75,7 @@ const TodayScreen = () => {
                     //let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
                     //let onLocation = rewardLocation.Location.isEqual(uL);
                   // console.log(onLocation)
-                    if(distance1 <= 5){
+                    if(distance1 <= 50){
 
                       setRewardCompleted(true)
                       api.RewardCompleted({ Points: PerosnalData.points + rewardLocation.rewards }).then((r)=>{
@@ -125,6 +127,8 @@ const TodayScreen = () => {
       api.getUserSteps().then((userD)=>{
         setSteps(userD.Steps)
         setDefaultSteps(userD.Steps)
+      }).catch(e=>{
+        
       });
 
   

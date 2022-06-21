@@ -88,7 +88,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/1.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F1.mp4?alt=media&token=2fd3911a-d472-45a5-8472-fbcd8f785a59'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -127,7 +127,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/2.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F2.mp4?alt=media&token=562dc0d5-fa4d-444b-a4a4-e5a01d3f07db'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -169,7 +169,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/3.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F3.mp4?alt=media&token=edfa6705-8d9e-4dd5-97b9-549e8519e0fd'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -208,7 +208,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/4.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F4.mp4?alt=media&token=ff652b4d-baf7-4b1a-856d-ff0c363ccbc5'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -250,7 +250,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/5.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F5.mp4?alt=media&token=07c38e47-88e6-4f7f-96df-162cbcefd480'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -289,7 +289,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/cardio/6.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/Cardio%2F6.mp4?alt=media&token=072169e5-124b-4406-b983-82696104be9f'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{

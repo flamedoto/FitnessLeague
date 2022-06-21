@@ -89,7 +89,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/1.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F1.mp4?alt=media&token=f2708812-74ac-410f-8734-ba520d0daded'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -128,7 +128,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/2.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F2.mp4?alt=media&token=c4aa2a34-115d-4841-8cab-4a1615a7240b'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -170,7 +170,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/3.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F3.mp4?alt=media&token=dcf0aa2f-2f57-47c0-83b8-87736c4b179b'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -209,7 +209,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/4.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F4.mp4?alt=media&token=13efd468-a3fd-4a13-8d54-a3bcf18fa50d'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -251,7 +251,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/5.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F5.mp4?alt=media&token=79aa2991-2c32-44be-8826-6a4cbc702911'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{
@@ -290,7 +290,7 @@ import { View,
           }}>
           <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Lose/daily_workout/6.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/daily_workout%2F6.mp4?alt=media&token=dce45a03-c7de-44ea-bdbc-41a672268877'
                 navigation.navigate('VideoPlayerScreen')
             }}
             style={{

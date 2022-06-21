@@ -90,7 +90,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/1.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F1.mp4?alt=media&token=dfb5822a-3fdd-4d27-910a-4a03b7eb3cd1'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -129,7 +129,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/2.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F2.mp4?alt=media&token=f12cad1a-3496-4947-9669-b8dc9720aae6'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -171,7 +171,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/3.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F3.mp4?alt=media&token=f6bf76d3-e728-4745-b37a-21c62b7f499e'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -210,7 +210,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/4.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F4.mp4?alt=media&token=02735832-2f67-4932-aba2-0f94f6e3ad1a'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -252,7 +252,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/5.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F5.mp4?alt=media&token=ebfecebd-215b-4546-a700-f2570d6cd8bf'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -291,7 +291,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/yoga/6.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/yoga%2F6.mp4?alt=media&token=3a309bbf-18e8-4a92-a4cf-60314437f73a'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{

@@ -23,12 +23,14 @@ import { View,
         //here you could set the isBuffer value to the state and then do something with it
         //such as show a loading icon
         }
+
+        console.log(VideoLink.Link)
     return (
         <View style={{ alignItems: 'center', flex: 1, justifyContent: 'center' }}>
         <View>
 
         <Video
-        source={VideoLink.Link}
+        source={{uri: VideoLink.Link}}
         style={{ width: 300, height: 300 }}
         controls={true}
         audioOnly={true}

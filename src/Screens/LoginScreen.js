@@ -22,18 +22,34 @@ const LoginScreen = ({navigation}) => {
       return
     }
 */
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (reg.test(email) === false) {
+      alert("Email is Not Correct");
+      return;
+    }
+
+
   
-    
-    firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((res) => {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(async (res) => {
+      
+      eVerified = firebase.auth().currentUser.emailVerified;
+      
+      if(eVerified == true){
+        console.log('User logged-in successfully!')
+      
+        LoginState.userLoginin = true
+
+      }else{
+        await firebase
+        .auth()
+        .currentUser.sendEmailVerification()
+        alert('Please verify your email address to login')
+      }
       console.log(res)
-      console.log('User logged-in successfully!')
-    
-      LoginState.userLoginin = true
     })
-    .catch(error => alert("Email or Password Incorrec. TRY AGAIN"))
+    .catch(error => {alert("Email or Password Incorrect. TRY AGAIN")
+    console.log(error)
+  })
 
 
    /* signInWithEmailAndPassword(authentication, email, password)

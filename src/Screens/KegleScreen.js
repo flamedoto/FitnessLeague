@@ -89,7 +89,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/kegles/1.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/kegles%2F1.mp4?alt=media&token=375b3fbc-84a2-4123-ba2f-7651bfd7e9ff'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -128,7 +128,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/kegles/2.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/kegles%2F2.mp4?alt=media&token=2b6c4c00-9920-4837-874d-40e1957977bf'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -170,7 +170,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/kegles/3.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/kegles%2F3.mp4?alt=media&token=b9ccabbd-2ab3-4b99-b285-70084752bc7b'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -209,7 +209,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/kegles/4.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/kegles%2F4.mp4?alt=media&token=36d5f37e-5afc-40a4-9318-7ef416ef3fec'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{
@@ -251,7 +251,7 @@ const ExerciseScreen = ({ navigation }) => {
         }}>
         <TouchableOpacity
             onPress={()=>{
-                VideoLink.Link = require("../Assets/videos/Gain/kegles/5.mp4")
+                VideoLink.Link = 'https://firebasestorage.googleapis.com/v0/b/fitneeague.appspot.com/o/kegles%2F5.mp4?alt=media&token=54400113-d6c1-4d76-bf21-d6f5f97ae219'
                 navigation.navigate('VideoPlayerScreen')
             }}
           style={{

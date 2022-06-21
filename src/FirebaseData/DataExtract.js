@@ -48,6 +48,9 @@ const UpdateUserBMI = ({ BMI, Weight, Height }) => {
     return new Promise(async(resolve, reject) =>{
 
 
+        var d = new Date();
+        d.setHours(0,0,0,0);
+        const timestamp1 = firestore.Timestamp.fromDate(d);
 
 
         if(BMI < 25){
@@ -74,7 +77,12 @@ const UpdateUserBMI = ({ BMI, Weight, Height }) => {
             //TargetCalories: TargetCalories
 
            }).then(()=>{
-            resolve('data updated')
+
+            updateCalBmi().then(e=>{
+
+                resolve('data updated')
+            })
+
             }).catch((e)=>{
                 reject(e)
             }); 
@@ -86,6 +94,51 @@ const UpdateUserBMI = ({ BMI, Weight, Height }) => {
 
     })
 
+}
+
+
+const updateCalBmi = () => {
+    return new Promise(async(resolve, reject)=>{
+
+        var d = new Date();
+        d.setHours(0,0,0,0);
+        const timestamp1 = firestore.Timestamp.fromDate(d);
+
+        var CaloBMI = firebase.firestore().collection("calories")
+
+
+        CaloBMI = CaloBMI.where('userId', '==', firebase.auth().currentUser.uid)
+        CaloBMI = CaloBMI.where('Date', '==', timestamp1)
+
+
+        CaloBMI.get()
+        .then(function(querySnapshot) {
+
+
+            if(querySnapshot.size == 0 ){
+           }else{
+
+
+                querySnapshot.forEach(function(document) {
+                document.ref.update({
+
+                    caloriesBurned: 0,
+                    caloriesConsumed: 0,
+
+                 }).then(()=>{
+
+                resolve('')
+
+                }).catch((e)=>{
+                    reject(e)
+                }); 
+
+                });
+            }
+        });
+
+
+    })
 }
 
 const updateOneSignalId = (deviceId) => {

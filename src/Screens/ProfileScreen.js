@@ -151,10 +151,6 @@ const ProfileScreen = ({navigation}) => {
 
           
           <View style={styles.body}>
-                <Text style={{ color: 'black',textAlign: 'center',padding: 10, color:'blue', fontSize:20, }}>Rewards Points</Text>
-            <TouchableOpacity>
-              <Progress.Bar style={{alignSelf:'center'}} progress={userProgress} width={100} animated={true} color={'#696969'} />
-            </TouchableOpacity>
 
             <View style={styles.bodyContent}>
               
@@ -162,7 +158,13 @@ const ProfileScreen = ({navigation}) => {
               <Text style={styles.mail}>{userData.Email}</Text>
               <Text style={styles.weight}>Weight: {userBMIData.Weight}</Text>
 
-              <View style={styles.buttonContainer}>
+              <Text style={{ fontSize: 17,fontWeight: '300',marginTop: 30, }}>Your weight Type is <Text style={{ fontWeight: 'bold' }}>{userBMIData.weightType}</Text></Text>
+
+              <Text style={{ color: 'black',textAlign: 'center',padding: 10, color:'blue', fontSize:20,marginTop: 30, }}>Rewards Points</Text>
+              <TouchableOpacity style={{ position: 'relative', marginBottom: 20, }}>
+                <Progress.Bar style={{alignSelf:'center'}} progress={userProgress} width={100} animated={true} color={'#696969'} />
+              </TouchableOpacity>
+
               <TouchableOpacity style={styles.button} onPress={()=>{
                 if(userData.points >= MaximumPoints){
                   api.updatePoints()
@@ -186,7 +188,6 @@ const ProfileScreen = ({navigation}) => {
               > 
                   <Text> Logout </Text>
               </TouchableOpacity>
-              </View>
 
             </View>
         </View>
@@ -207,43 +208,33 @@ const styles = StyleSheet.create({
       borderRadius: 63,
       borderWidth: 4,
       borderColor: "white",
+      position: 'absolute',
       marginBottom:10,
       alignSelf:'center',
-      position: 'absolute',
       marginTop:130
-    },
-    name:{
-      fontSize:22,
-      fontWeight:'600',
     },
     body:{
         marginTop:"15%",
     },
     bodyContent: {
-      flex: 1,
+      justifyContent: 'space-evenly',
       alignItems: 'center',
       padding:30,
     },
     name:{
-      position: 'absolute',
-      marginTop: '10%',
       fontSize:28,
       color: "#696969",
-      fontWeight: "600"
+      fontWeight: "600",
 
     },
     mail:{
       fontSize:16,
       color: "#00BFFF",
-      position: 'absolute',
-      marginTop:"22%",
       
     },
     weight:{
       fontSize:20,
       color: "#696969",
-      position: 'absolute',
-      marginTop:"30%",
       textAlign: 'center'
     },
 
@@ -276,12 +267,6 @@ const styles = StyleSheet.create({
     buttonContainer:{
     marginTop:"45%",
     flexDirection:'column',
-    },
-    centeredView: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 22
     },
     modalView: {
       margin: 20,

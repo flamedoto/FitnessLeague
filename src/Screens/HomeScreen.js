@@ -95,6 +95,12 @@ const HomeScreen = ({navigation}) => {
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
+
+
+          if(c < 0){
+            setcaloBurnorConsume(0)
+          }
+
           if(c/cal.caloriesTarget < 0){
             setCaloriesPercentage(0)
           }else{
@@ -114,6 +120,12 @@ const HomeScreen = ({navigation}) => {
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
+
+
+          if(c < 0){
+            setcaloBurnorConsume(0)
+          }
+
           if(c/cal.caloriesTarget < 0){
             setCaloriesPercentage(0)
           }else{
@@ -214,6 +226,11 @@ const HomeScreen = ({navigation}) => {
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
+
+          if(c < 0){
+            setcaloBurnorConsume(0)
+          }
+
           if(c/cal.caloriesTarget < 0){
             setCaloriesPercentage(0)
           }else{
@@ -230,6 +247,12 @@ const HomeScreen = ({navigation}) => {
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
+
+
+          if(c < 0){
+            setcaloBurnorConsume(0)
+          }
+
           if(c/cal.caloriesTarget < 0){
             setCaloriesPercentage(0)
           }else{

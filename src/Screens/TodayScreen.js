@@ -21,7 +21,7 @@ const TodayScreen = () => {
   const [defaultSteps, setDefaultSteps] = useState(0);
   const [userLocation, setUserLocation] = useState('')
   const [userData, setUserData] = useState({})
-  const [rewardLocation, setRewardLocation] = useState('')
+  const [rewardLocation, setRewardLocation] = useState('None')
   const [rewardCompleted, setRewardCompleted] = useState(false)
   const [pointsData, setPointsData] = useState('')
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,82 +29,7 @@ const TodayScreen = () => {
   var focus = useIsFocused();
 
 
-  useEffect(()=>{
-    if(focus == true){
-    api.getAllUsersTask().then((userD)=>{
-      setPointsData(userD);
-      console.log(32132)
-    // console.log(userD.Location._latitude)
-    }).catch(()=>{
-      setPointsData('None')
-    });
-
-
-    setUserData(PerosnalData);
-    //setSteps(PerosnalData.Steps)
-
-      api.getUserSteps().then((userD)=>{
-        setSteps(userD.Steps)
-        setDefaultSteps(userD.Steps)
-      }).catch(e=>{
-
-      });
-
   
-      api.getUserTask().then((userD)=>{
-        setRewardLocation(userD);
-      // console.log(userD.Location._latitude)
-      }).catch(()=>{
-        setRewardLocation('None')
-      });
-
-
-      let locationSubscription = RNLocation.subscribeToLocationUpdates(locations => {
-        //        console.log(locations)
-       // alert(locations[0].longitude)
-                setUserLocation(locations[0])
-        
-                if(rewardLocation != 'None'){
-                  if(rewardLocation != '' && rewardCompleted == false){
-                    let distance1 = getDistance(
-                      { latitude: rewardLocation.Location._latitude, longitude: rewardLocation.Location._longitude },
-                      { latitude: locations[0].latitude, longitude: locations[0].longitude }
-                  );
-
-                  // let rL = new firestore.GeoPoint(rewardLocation.Location._latitude, rewardLocation.Location._longitude)
-                    //let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
-                    //let onLocation = rewardLocation.Location.isEqual(uL);
-                  // console.log(onLocation)
-                    if(distance1 <= 50){
-
-                      setRewardCompleted(true)
-                      api.RewardCompleted({ Points: PerosnalData.points + rewardLocation.rewards }).then((r)=>{
-                        PerosnalData.points += rewardLocation.rewards
-                        alert('Your Task is Complete Rewards: '+ rewardLocation.rewards.toString())
-                      })
-                    }
-                  }
-                }
-                /* Example location returned
-                {
-                  speed: -1,
-                  longitude: -0.1337,
-                  latitude: 51.50998,
-                  accuracy: 5,
-                  heading: -1,
-                  altitude: 0,
-                  altitudeAccuracy: -1
-                  floor: 0
-                  timestamp: 1446007304457.029,
-                  fromMockProvider: false
-                }
-                */
-              })
-        
-              return () => locationSubscription();
-            }
-
-  },[focus])
 
   useEffect(() => {
 
@@ -141,10 +66,10 @@ const TodayScreen = () => {
 
 
 
-    RNLocation.getLatestLocation().then((lat_loc)=>{
+   /* RNLocation.getLatestLocation().then((lat_loc)=>{
       console.log(lat_loc)
       api.updateLocation({Longitude: lat_loc.longitude, Latitude: lat_loc.latitude, Speed: lat_loc.speed})
-    })
+    })*/
 
 
     
@@ -176,6 +101,86 @@ const TodayScreen = () => {
   }, []);
 
 
+  useEffect(()=>{
+    console.log("focus")
+    if(focus == true){
+    api.getAllUsersTask().then((userD)=>{
+      setPointsData(userD);
+      console.log(32132)
+    // console.log(userD.Location._latitude)
+    }).catch(()=>{
+      setPointsData('None')
+    });
+
+
+    setUserData(PerosnalData);
+    //setSteps(PerosnalData.Steps)
+
+      api.getUserSteps().then((userD)=>{
+        setSteps(userD.Steps)
+        setDefaultSteps(userD.Steps)
+      }).catch(e=>{
+
+      });
+
+  
+      api.getUserTask().then((userD)=>{
+        setRewardLocation(userD);
+      // console.log(userD.Location._latitude)
+      }).catch(()=>{
+        setRewardLocation('None')
+      });
+
+
+      let locationSubscription = RNLocation.subscribeToLocationUpdates(locations => {
+        //        console.log(locations)
+       // alert(locations[0].longitude)
+                      console.log(123)
+                setUserLocation(locations[0])
+               // console.log(rewardLocation)
+                if(rewardLocation != 'None'){
+                 // console.log(321123123121231312312312323)
+                  if(rewardCompleted == false){
+                   // console.log(321123123123)
+                    var distance1 = getDistance(
+                      { latitude: rewardLocation.Location._latitude, longitude: rewardLocation.Location._longitude },
+                      { latitude: locations[0].latitude, longitude: locations[0].longitude }
+                  );
+                  // let rL = new firestore.GeoPoint(rewardLocation.Location._latitude, rewardLocation.Location._longitude)
+                    //let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
+                    //let onLocation = rewardLocation.Location.isEqual(uL);
+                  // console.log(onLocation)
+                  //alert(distance1)
+                    if(distance1 <= 20){
+
+                      setRewardCompleted(true)
+                      api.RewardCompleted({ Points: PerosnalData.points + rewardLocation.rewards }).then((r)=>{
+                        PerosnalData.points += rewardLocation.rewards
+                        alert('Your Task is Complete Rewards: '+ rewardLocation.rewards.toString())
+                      })
+                    }
+                  }
+                }
+                /* Example location returned
+                {
+                  speed: -1,
+                  longitude: -0.1337,
+                  latitude: 51.50998,
+                  accuracy: 5,
+                  heading: -1,
+                  altitude: 0,
+                  altitudeAccuracy: -1
+                  floor: 0
+                  timestamp: 1446007304457.029,
+                  fromMockProvider: false
+                }
+                */
+              })
+        
+              return () => locationSubscription();
+            }
+
+  },[focus])
  /* useEffect(()=>{
     console.log(steps)
     api.UpdateSteps({ Steps: steps})
@@ -184,9 +189,10 @@ const TodayScreen = () => {
 
   
 
-  if(userLocation == '' || rewardLocation == '' || pointsData == ''){
+  if(userLocation == '' || rewardLocation == 'None' || pointsData == ''){
     return <LottieView source={require('../Assets/workout_load.json')} autoPlay loop />
   }
+
 
   return (
     

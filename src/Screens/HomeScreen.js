@@ -14,15 +14,15 @@ import * as Progress from 'react-native-progress';
 
 
 RNLocation.configure({
-  distanceFilter: 5, // Meters
+  distanceFilter: 5.0, // Meters
   desiredAccuracy: {
     android: "highAccuracy"
   },
   androidProvider: "auto",
   // Android only
-  interval: 1000, // Milliseconds
-  fastestInterval: 1000, // Milliseconds
-  maxWaitTime: 1000, // Milliseconds
+  interval: 5000, // Milliseconds
+  fastestInterval: 10000, // Milliseconds
+  maxWaitTime: 5000, // Milliseconds
 })
 
 
@@ -91,7 +91,7 @@ const HomeScreen = ({navigation}) => {
           let c = cal.caloriesConsumed - cal.caloriesBurned;
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+           // alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
@@ -116,7 +116,7 @@ const HomeScreen = ({navigation}) => {
           let c = cal.caloriesBurned - cal.caloriesConsumed
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+          //  alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
@@ -226,7 +226,7 @@ const HomeScreen = ({navigation}) => {
           let c = cal.caloriesConsumed - cal.caloriesBurned;
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+           // alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
@@ -247,7 +247,7 @@ const HomeScreen = ({navigation}) => {
           let c = cal.caloriesBurned - cal.caloriesConsumed
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+         //   alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
@@ -347,8 +347,8 @@ const HomeScreen = ({navigation}) => {
         <View style={styles.caloriesBar}>
           <Text style={styles.caloriesText}>GOAL :  {parseInt(caloBurnorConsume)}/{caloriesData.caloriesTarget}</Text>
           <Progress.Bar progress={caloriesPercentage} width={320}  style={{ width: 300,alignSelf:'center', marginBottom:'5%' }}/>
-          <Text style={styles.caloriesText}>Burned: {caloriesData.caloriesBurned}</Text>
-          <Text style={styles.caloriesText}>Consumed: {caloriesData.caloriesConsumed}</Text>
+          <Text style={styles.caloriesText}>Burned: {parseInt(caloriesData.caloriesBurned)}</Text>
+          <Text style={styles.caloriesText}>Consumed: {parseInt(caloriesData.caloriesConsumed)}</Text>
         </View>
       </View>
 

@@ -61,7 +61,7 @@ new Date(total_miliseconds)
           let c = cal.caloriesConsumed - cal.caloriesBurned;
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+            //alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
@@ -77,7 +77,7 @@ new Date(total_miliseconds)
           let c = cal.caloriesBurned - cal.caloriesConsumed
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+          //  alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
@@ -108,7 +108,7 @@ new Date(total_miliseconds)
           let c = cal.caloriesConsumed - cal.caloriesBurned;
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+         //   alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
@@ -124,7 +124,7 @@ new Date(total_miliseconds)
           let c = cal.caloriesBurned - cal.caloriesConsumed
 
           if(c > cal.caloriesTarget){
-            alert('Daily target completed')
+           // alert('Daily target completed')
           }
 
           setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)
@@ -155,7 +155,7 @@ new Date(total_miliseconds)
             let c = cal.caloriesConsumed - cal.caloriesBurned;
   
             if(c > cal.caloriesTarget){
-              alert('Daily target completed')
+             // alert('Daily target completed')
             }
   
             setcaloBurnorConsume(cal.caloriesConsumed - cal.caloriesBurned)
@@ -174,7 +174,7 @@ new Date(total_miliseconds)
             let c = cal.caloriesBurned - cal.caloriesConsumed
   
             if(c > cal.caloriesTarget){
-              alert('Daily target completed')
+              //alert('Daily target completed')
             }
   
             setcaloBurnorConsume(cal.caloriesBurned - cal.caloriesConsumed)

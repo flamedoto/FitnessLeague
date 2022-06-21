@@ -64,18 +64,17 @@ const TodayScreen = () => {
         
                 if(rewardLocation != 'None'){
                   if(rewardLocation != '' && rewardCompleted == false){
-                    let a = getDistance(
+                    let distance1 = getDistance(
                       { latitude: rewardLocation.Location._latitude, longitude: rewardLocation.Location._longitude },
                       { latitude: locations[0].latitude, longitude: locations[0].longitude }
                   );
 
-                  alert(a)
                   // let rL = new firestore.GeoPoint(rewardLocation.Location._latitude, rewardLocation.Location._longitude)
-                    let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
-                    let onLocation = rewardLocation.Location.isEqual(uL);
+                    //let uL = new firestore.GeoPoint(locations[0].latitude, locations[0].longitude)
+                    //let onLocation = rewardLocation.Location.isEqual(uL);
                   // console.log(onLocation)
-                    if(onLocation == true){
-                      alert('true')
+                    if(distance1 <= 5){
+
                       setRewardCompleted(true)
                       api.RewardCompleted({ Points: PerosnalData.points + rewardLocation.rewards }).then((r)=>{
                         PerosnalData.points += rewardLocation.rewards
@@ -149,7 +148,7 @@ const TodayScreen = () => {
     
     
     const config = {
-      default_threshold: 49,
+      default_threshold: 42,
       default_delay: 150000000,
       cheatInterval: 3000,
       onStepCountChange: (stepCount) => { 

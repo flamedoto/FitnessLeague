@@ -33,7 +33,7 @@ const LoginScreen = ({navigation}) => {
     
       LoginState.userLoginin = true
     })
-    .catch(error => alert(error))
+    .catch(error => alert("Email or Password Incorrec. TRY AGAIN"))
 
 
    /* signInWithEmailAndPassword(authentication, email, password)

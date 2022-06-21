@@ -341,8 +341,10 @@ const HomeScreen = ({navigation}) => {
         {/* <Text style={{ color: 'black',marginTop: 10,fontWeight: 'bold' }}>Calroies History</Text> */}
 
         <View style={styles.caloriesBar}>
-          <Text style={styles.caloriesText}>Weight Type:  {BMIData.weightType} {parseInt(caloBurnorConsume)}/{caloriesData.caloriesTarget}</Text>
-          <Progress.Bar progress={caloriesPercentage} width={320}  style={{ width: 300,alignSelf:'center', }}/>
+          <Text style={styles.caloriesText}>GOAL :  {parseInt(caloBurnorConsume)}/{caloriesData.caloriesTarget}</Text>
+          <Progress.Bar progress={caloriesPercentage} width={320}  style={{ width: 300,alignSelf:'center', marginBottom:'5%' }}/>
+          <Text style={styles.caloriesText}>Burned: {caloriesData.caloriesBurned}</Text>
+          <Text style={styles.caloriesText}>Consumed: {caloriesData.caloriesConsumed}</Text>
         </View>
       </View>
 
@@ -536,6 +538,5 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     color: 'black',
     alignSelf:'center',
-    textTransform: 'uppercase',
   }
 })
